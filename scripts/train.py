@@ -27,7 +27,7 @@ FP16 = True
 RESUME = False
 # END CONFIG #
 
-def main():
+if __name__ == '__main__':
     # Load the tokeniser.
     tokeniser: RobertaTokenizerFast = RobertaTokenizerFast.from_pretrained(model_dir)
     
@@ -110,7 +110,6 @@ def main():
         save_strategy = 'steps',
         save_steps = 16_384,
         save_total_limit = 5,
-        load_best_model_at_end = True,
 
         logging_strategy = 'steps',
         logging_steps = 128,
@@ -144,10 +143,8 @@ def main():
     )
     
     # Save the model.
-    model.save_pretrained(model_dir)
+    trainer.save_model()
+    trainer.save_state()
 
-    # Evaluate the model.
+    # Evaluate the model on the test sets.
     trainer.evaluate(data['test'])
-
-if __name__ == '__main__':
-    main()
