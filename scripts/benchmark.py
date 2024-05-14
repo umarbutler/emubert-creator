@@ -16,6 +16,9 @@ MODELS = [
     'roberta-base',
     'bert-base-cased',
     'bert-base-uncased',
+    'nlpaueb/legal-bert-base-uncased',
+    'casehold/legalbert',
+    'pile-of-law/legalbert-large-1.7M-2',
 ]
 BATCH_SIZE = 8
 DEVICE = 'cuda' if torch.cuda.is_available() else 'cpu'
