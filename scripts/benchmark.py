@@ -16,7 +16,6 @@ MODELS = [
     'roberta-base',
     'bert-base-cased',
     'bert-base-uncased',
-    'albert-base-v2',
 ]
 BATCH_SIZE = 8
 DEVICE = 'cuda' if torch.cuda.is_available() else 'cpu'
