@@ -23,7 +23,6 @@ To train EmuBert, run the following scripts in the `scripts` directory in order:
 2. `block.py`, which splits texts into block of the same size as EmuBert's context window and saves them.
 3. `train.py`, which trains EmuBert and saves it to a directory named `model` (unless the `model_dir` variable in `config.py` is overridden). If training is interrupted at any point, set the script's `RESUME` variable to `True`.
 4. `convert.py`, which converts EmuBert from a Better Transformer into a vanilla Transformer.
-5. `benchmark.py`, which benchmarks EmuBert against other popular masked language models.
 
 ## Licence 📜
 The Creator is licensed under the [MIT License](LICENCE).
